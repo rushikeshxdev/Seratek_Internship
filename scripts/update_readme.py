@@ -67,7 +67,7 @@ def fetch_commit_counts():
 def build_stats(counts):
     now = datetime.now(timezone.utc).replace(hour=0, minute=0, second=0, microsecond=0)
 
-    days_done  = max(0, min((now - START_DATE).days + 1, TOTAL_DAYS))
+    days_done = len([d for d in counts if counts[d] > 0])
     days_left  = TOTAL_DAYS - days_done
     pct        = round((days_done / TOTAL_DAYS) * 100)
     total_commits = sum(counts.values())
