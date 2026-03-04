@@ -59,7 +59,8 @@ Seratek_Internship/
 ├── 📂 Day-1/
 │   └── Simple-CRUD-App/     ✅ Express.js server, REST API basics
 │
-├── 📂 Day-2/                🔜 Coming soon...
+├── 📂 Day-2/
+│   └── subscription-tracker/ ✅ ES6 modules, Express 5.x, API setup
 │
 └── README.md                📖 You are here
 ```
@@ -84,6 +85,34 @@ const app = express();
 app.get('/', (req, res) => res.send('Hello, World!'));
 
 app.listen(3000, () => console.log('Server is running on port 3000'));
+```
+
+---
+
+### 📌 Day 2 — Subscription Tracker API
+> **March 2, 2026**
+
+- 📦 Learned ES6 modules (`import/export` syntax)
+- ⚡ Upgraded to Express 5.x
+- 🌐 Built Subscription Tracker API foundation
+- 🚀 Server live at `localhost:5000`
+- 🛠️ Added ESLint for code quality
+- 🔁 Committed Day 2 progress ✅
+
+```js
+import express from "express";
+
+const app = express();
+
+app.get("/", (req, res) => {
+    res.send("Welcome to the Subscription Tracker API!");
+})
+
+app.listen(5000, () => {
+    console.log("Server is running on link http://localhost:5000");
+});
+
+export default app;
 ```
 
 ---
