@@ -69,8 +69,10 @@ Seratek_Internship/
 
 ## ✅ Progress Log
 
-### 📌 Day 1 — Simple CRUD App with Express
-> **March 1, 2026**
+<details>
+<summary><b>📌 Day 1 — Simple CRUD App with Express</b> · <i>March 1, 2026</i></summary>
+
+<br>
 
 - ⚡ Set up Node.js + Express from scratch
 - 🌐 Built first `GET /` REST endpoint
@@ -87,10 +89,14 @@ app.get('/', (req, res) => res.send('Hello, World!'));
 app.listen(3000, () => console.log('Server is running on port 3000'));
 ```
 
+</details>
+
 ---
 
-### 📌 Day 2 — Subscription Tracker API
-> **March 2, 2026**
+<details>
+<summary><b>📌 Day 2 — Subscription Tracker API</b> · <i>March 2, 2026</i></summary>
+
+<br>
 
 - 📦 Learned ES6 modules (`import/export` syntax)
 - ⚡ Upgraded to Express 5.x
@@ -114,6 +120,8 @@ app.listen(5000, () => {
 
 export default app;
 ```
+
+</details>
 
 ---
 
