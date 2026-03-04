@@ -21,7 +21,7 @@
 
 | 🗓️ Days Done | ⏳ Days Left | 💻 Total Commits | 🔥 Streak | ✅ Complete |
 |:---:|:---:|:---:|:---:|:---:|
-| `3` | `177` | `15` | `3 days` | `2%` |
+| `3` | `177` | `18` | `3 days` | `2%` |
 
 ### 180-Day Commit Map
 ```
