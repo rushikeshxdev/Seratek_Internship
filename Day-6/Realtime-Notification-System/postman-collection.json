@@ -1,0 +1,153 @@
+{
+  "info": {
+    "name": "Real-time Notification System API",
+    "description": "Collection of API endpoints for the Real-time Notification System",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Health Check",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/health",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["health"]
+        }
+      }
+    },
+    {
+      "name": "Create Notification (User Specific)",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"userId\": \"user123\",\n  \"title\": \"New Message\",\n  \"message\": \"You have a new message from John\",\n  \"type\": \"info\"\n}"
+        },
+        "url": {
+          "raw": "http://localhost:3000/notifications",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["notifications"]
+        }
+      }
+    },
+    {
+      "name": "Create Notification (Broadcast)",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"title\": \"System Maintenance\",\n  \"message\": \"System will be down for maintenance at 2 AM\",\n  \"type\": \"warning\",\n  \"broadcast\": true\n}"
+        },
+        "url": {
+          "raw": "http://localhost:3000/notifications",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["notifications"]
+        }
+      }
+    },
+    {
+      "name": "Get User Notifications",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/notifications/user/user123",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["notifications", "user", "user123"]
+        }
+      }
+    },
+    {
+      "name": "Get Pending Notifications",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/notifications/user/user123/pending",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["notifications", "user", "user123", "pending"]
+        }
+      }
+    },
+    {
+      "name": "Mark Notification as Read",
+      "request": {
+        "method": "PATCH",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/notifications/user/user123/notif_1234567890_abc123/read",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["notifications", "user", "user123", "notif_1234567890_abc123", "read"]
+        }
+      }
+    },
+    {
+      "name": "Mark All as Read",
+      "request": {
+        "method": "PATCH",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/notifications/user/user123/read-all",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["notifications", "user", "user123", "read-all"]
+        }
+      }
+    },
+    {
+      "name": "Clear All Notifications",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/notifications/user/user123",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["notifications", "user", "user123"]
+        }
+      }
+    },
+    {
+      "name": "Get Statistics",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/notifications/stats",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["notifications", "stats"]
+        }
+      }
+    }
+  ]
+}
