@@ -57,12 +57,21 @@ AUG  ······························
 Seratek_Internship/
 │
 ├── 📂 Day-1/
-│   └── Simple-CRUD-App/     ✅ Express.js server, REST API basics
+│   └── Simple-CRUD-App/              ✅ Express.js server, REST API basics
 │
 ├── 📂 Day-2/
-│   └── subscription-tracker/ ✅ ES6 modules, Express 5.x, API setup
+│   └── subscription-tracker/         ✅ ES6 modules, Express 5.x, API setup
 │
-└── README.md                📖 You are here
+├── 📂 Day-3/
+│   └── NestJS/                       ✅ NestJS framework, Property API
+│
+├── 📂 Day-5/
+│   └── FullStack-Authentication-Project/ ✅ JWT auth, User management
+│
+├── 📂 Day-6/
+│   └── Realtime-Notification-System/ ✅ WebSocket, MongoDB, Real-time notifications
+│
+└── README.md                         📖 You are here
 ```
 
 ---
@@ -125,6 +134,89 @@ export default app;
 
 ---
 
+<details>
+<summary><b>📌 Day 3 — NestJS Property API</b> · <i>March 3, 2026</i></summary>
+
+<br>
+
+- 🏗️ Learned NestJS framework architecture
+- 📦 Created Property module with controllers
+- 🎯 Implemented route parameters and query params
+- 🔧 Used ParseIntPipe and ParseBoolPipe for validation
+- 📝 Created DTOs (Data Transfer Objects)
+- 🚀 Built REST API with GET and POST endpoints
+- 🔁 Committed Day 3 progress ✅
+
+```js
+@Controller('property')
+export class PropertyController {
+    @Get(':id')
+    findOne(@Param('id', ParseIntPipe) id) {
+        return `Property ID: ${id}`;
+    }
+    
+    @Post()
+    create(@Body() body: CreatePropertyDto) {
+        return body;
+    }
+}
+```
+
+</details>
+
+---
+
+<details>
+<summary><b>📌 Day 5 — Full-Stack Authentication Project</b> · <i>March 5, 2026</i></summary>
+
+<br>
+
+- 🔐 Built complete authentication system
+- 👤 User registration and login
+- 🎫 JWT token implementation
+- 🔒 Password hashing with bcrypt
+- 🛡️ Protected routes and middleware
+- 🎨 Frontend authentication UI
+- 🔁 Committed Day 5 progress ✅
+
+</details>
+
+---
+
+<details>
+<summary><b>📌 Day 6 — Real-time Notification System</b> · <i>March 6, 2026</i></summary>
+
+<br>
+
+- 🔔 Built production-ready notification system
+- ⚡ WebSocket with Socket.IO for real-time communication
+- 📦 MongoDB integration for persistent storage
+- 🔄 Auto-reconnection with localStorage persistence
+- 📨 User-specific and broadcast notifications
+- 💾 Offline notification storage and delivery
+- 📚 Comprehensive documentation (10 MD files)
+- 🎨 Beautiful responsive web client
+- 🚀 Deployment-ready architecture
+- 🔁 Committed Day 6 progress ✅
+
+```js
+// WebSocket Gateway
+@WebSocketGateway({ cors: true })
+export class NotificationGateway {
+    @SubscribeMessage('sendNotification')
+    async handleNotification(client: Socket, data: any) {
+        const notification = await this.service.createNotification(data);
+        this.server.emit('notification', notification);
+    }
+}
+```
+
+**📖 Documentation**: 10 comprehensive guides covering architecture, deployment, integration, and more!
+
+</details>
+
+---
+
 ## 🛠️ Tech Stack Growing Over Time
 
 <div align="center">
@@ -132,7 +224,11 @@ export default app;
 ![Node.js](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white)
 ![Express](https://img.shields.io/badge/Express.js-000000?style=for-the-badge&logo=express&logoColor=white)
 ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
+![NestJS](https://img.shields.io/badge/NestJS-E0234E?style=for-the-badge&logo=nestjs&logoColor=white)
+![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white)
 ![MongoDB](https://img.shields.io/badge/MongoDB-47A248?style=for-the-badge&logo=mongodb&logoColor=white)
+![Socket.IO](https://img.shields.io/badge/Socket.IO-010101?style=for-the-badge&logo=socketdotio&logoColor=white)
+![JWT](https://img.shields.io/badge/JWT-000000?style=for-the-badge&logo=jsonwebtokens&logoColor=white)
 ![React](https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=react&logoColor=black)
 ![Git](https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white)
 ![VS Code](https://img.shields.io/badge/VS%20Code-007ACC?style=for-the-badge&logo=visualstudiocode&logoColor=white)
